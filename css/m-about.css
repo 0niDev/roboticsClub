@@ -1,0 +1,84 @@
+@media screen and (max-width: 900px) {
+    .m-about {
+        position: absolute;
+        background-color: white;
+        z-index: 60;
+        width: 100vw;
+        height: 100vh;
+        left: -100%;
+        /* left: 0; */
+    }
+    .flyLeftAbout {
+        animation: flyLeftAbout 1s ease-in-out forwards;
+    }
+    @keyframes flyLeftAbout {
+        0% {
+            left: 0%;
+        }
+        99% {
+            left: -100%;
+        }
+        100% {
+            left: -100%;
+        }
+        
+    }
+    .flyRightAbout {
+        animation: flyRightAbout 1s ease-in-out forwards;
+    }
+    @keyframes flyRightAbout {
+        0% {
+            left: -100%;
+        }
+        100% {
+            left: 0%;
+            
+        }
+    }
+    .m-aboutMainHeading {
+        display: block;
+        border: 3px solid black;
+        padding: 4%;
+        border-radius: 5px;
+        font-size: clamp(0px, 7vw, 60px);
+        font-weight: 900;
+        width: 50vw;
+        position: relative;
+        top: 7%;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+    }
+    .m-letterwrapper {
+        width: 80vw;
+        padding: 10px;
+        height: 50vh;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        top: 20%;
+    }
+    .m-aboutLetters p::first-letter {
+        font-size: clamp(3em, 7vw, 7em);
+        color: rgb(0, 169, 244);
+        font-weight: 900;
+    }
+    .m-aboutText {
+        font-size: clamp(0px, 3.2vw, 5em);
+        font-weight: 700;
+        padding: 0;
+        margin-top: 10%;
+        text-align: center;
+    }
+}
+.m-AboutImageBrain {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.m-AboutImageBrain svg {
+    width: auto;
+    height: 100%;
+}

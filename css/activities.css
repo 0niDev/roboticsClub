@@ -1,0 +1,200 @@
+.activitiesPage {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    z-index: -30;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100vw);
+}
+.ActiviteispageUnSlide {
+    animation: ActiviteispageUnSlide 1s forwards ease-in-out;
+}
+@keyframes ActiviteispageSlide {
+    0% {
+        transform: translateX(100vw);
+        z-index: 5;
+    }
+    100% {
+        transform: translateX(0vw);
+        z-index: 5;
+    }
+}
+@keyframes ActiviteispageUnSlide {
+    0% {
+        transform: translateX(0vw);
+        z-index: 5;
+    }
+    99% {
+        transform: translateX(100vw);
+        z-index: 5;
+    }
+    100% {
+        z-index: -30;
+    }
+}
+
+.activitiesHeading {
+    position: relative;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: clamp(0px, 2.3vw, 48px);
+
+    width: 20vw;
+    height: 10vh;
+    font-weight: 600;
+    font-family: monospace;
+    border: 2px solid black;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.activitiesButtons {
+    height: 50vh;
+    width: 80vw;
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.activitiesButtonsMain {
+    width: 30%;
+    height: 80%;
+    border: 2px solid black;
+    position: relative;
+    background-color: white;
+}
+.ActiviteispageSlide {
+    animation: ActiviteispageSlide 1s forwards ease-in-out;
+}
+
+@keyframes ActiviteispageSlide {
+    0% {
+        transform: translateX(100vw);
+        z-index: 5;
+    }
+    100% {
+        transform: translateX(0vw);
+        z-index: 5;
+    }
+}
+.eventsButton span,.projectsButton span {
+    width: fit-content;
+    height: 10%;
+    font-size: clamp(0px, 2vw, 40px);
+    font-weight: 900;
+}
+.eventsButton svg, .projectsButton svg {
+    width: 15%;
+    height: 15%;
+    margin-left: 5%;
+}
+.eventsButton div:nth-child(1), .projectsButton div:nth-child(1) {
+    margin: auto;
+    width: 60%;
+    top: 10%;
+    position: relative;
+    border-bottom: 2px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.eventText, .projectText {
+    position: relative;
+    top: 22%;
+    width: 80%;
+    left: 50%;
+    font-size: clamp(0px, 1.2vw, 20px);
+
+    font-weight: 550;
+    text-align: center;
+    transform: translate(-50%, 0);
+    height: 60%;
+}
+.DIVEIN {
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    font-size: clamp(6px, 1vw, 24px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px;
+    width: 10vw;
+    height: 6vh;
+    padding: 10px;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    border: 2px solid black;
+    transition: all 0.2s ease-in-out;
+}
+.DIVEIN:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+.robotContainer {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
+}
+.robotContainer img{
+    position: absolute;
+    height: 70%;
+    bottom: 0;
+
+}
+.robotContainer .img {
+    height: 100%;
+    bottom: 0;
+    position: absolute;
+    left: 0; /* Start position */
+    animation: move 5s linear infinite;
+}
+
+@keyframes move {
+    0% { left: 0; }
+    100% { left: calc(100vw - 100px); } /* Adjust based on image width */
+}
+.textDiv {
+    width: fit-content; /* Adjust based on your image size */
+    padding: 0.4vw;
+    border: 2px solid black;
+    font-weight: 600;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    font-size: clamp(3px, 1vw, 18px);
+    transform: translate(0, -30%);
+    position: absolute;
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
+}
+
+@keyframes flyMoreUp {
+    0% {
+        bottom: 3%;
+    }
+    100% {
+        bottom: 15%;
+    }
+}
+@keyframes flyMoreDown {
+    0% {
+        bottom: 15%;
+    }
+    100% {
+        bottom: 3%;
+    }
+}

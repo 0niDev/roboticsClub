@@ -1,0 +1,23 @@
+#mouse {
+  position: absolute;
+    height: 15px;
+    width: 15px;
+    background: black;
+    border: 2px solid white;
+    top: 40px;
+    left: 40px;
+    z-index: 99;
+    transition: .07s linear;
+    pointer-events: none;
+    animation:cursor 1s infinite;
+    opacity: 0;
+    transition: opacity 1s;
+}
+@keyframes cursor {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}

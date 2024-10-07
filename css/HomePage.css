@@ -1,0 +1,232 @@
+* {
+    font-family: monospace;
+}
+
+.BoxDisappear {
+    animation: BoxDisappear 0.3s forwards;
+}
+@keyframes BoxDisappear {
+    0% {
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.homePage {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    top: 0;
+    transform: translate(0, -100%);
+}
+.homePage .background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+.eyes {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 20vw;
+    height: 20vw;
+    background-color: transparent;
+}
+@keyframes blink {
+    10% {
+        transform: translate(0%, 0%);
+    }
+    20% {
+        transform: translate(0%, -150%);
+    }
+    to {
+        transform: translate(0%, -150%);
+    }
+}
+
+.eyeL2 {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+}
+
+.eyeL1 {
+    position: absolute;
+    background-color: white;
+    width: 105%;
+    height: 100%;
+    z-index: 1;
+    left: -4%;
+    top: 0;
+    transform: translate(0%, -150%);
+    animation: blink 5s infinite;
+}
+.eyeR1 {
+    position: absolute;
+    background-color: white;
+    width: 105%;
+    height: 100%;
+    z-index: 1;
+    left: -4%;
+    top: 0;
+    transform: translate(0%, -150%);
+    animation: blink 5s infinite;
+}
+
+.eyeR2 {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+}
+.balls {
+    position: relative;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 15%;
+    height: 15%;
+    background-color: white;
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in-out;
+}
+
+@keyframes eyesComeDown {
+    0% {
+        top: -40%;
+    }
+    100% {    top: 20%;
+
+    }
+}
+@keyframes eyesGoUp {
+    0% {    top: 20%;
+
+    }
+    100% {
+        top: -40%;
+    }
+}
+.eyesComeDown {
+    animation: eyesComeDown 1s 0.6s forwards;
+  }
+  
+.eyesGoUp {
+    animation: eyesGoUp 1s forwards;
+}
+.roboticsHeadingHome {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15vh;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    height: 20vh;
+    width: 100%;
+}
+
+.eye {
+    display: inline-block;
+    
+    height: 10vh;
+    width: 10vh;
+    position: relative;
+}
+.roboticsHeadingHome span {
+    transition: all 0.2s ease-in-out;
+}
+
+.roboticsHeadingHome span:hover {
+    color: rgb(0, 169, 244);
+    text-shadow: 0 0 5px rgba(0, 169, 244, 0.7), 0 0 10px rgba(0, 169, 244, 0.5), 0 0 50px rgba(0, 169, 244, 0.3);
+}
+.robotRegister {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.robotRegister .robotWrapperPc {
+    height: 50%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.robotRegister .robotWrapperPc img {
+    height: 100%;
+    width: auto;
+}
+.robotRegister .pcHomeRobotMessage {
+    max-width: 19%;
+    max-height: 40%;
+    padding: 1%;
+    font-size: clamp(0px, 2vw, 1.7em);
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    
+}
+.registerButtonPc {
+    height: 20%;
+    width: 20%;
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(0px, 3vw, 1.7em);
+    font-weight: 900;
+    transition: all 0.2s ease-in-out;
+}
+.registerButtonPc:hover {
+    background-color: black;
+    color: white;
+}
+.pcHomeRobotMessage p {
+    word-wrap: break-word; 
+    white-space: normal; 
+    max-width: 100%; 
+}
+
+.pcHomeRobotMessage span {
+    white-space: nowrap; 
+}
+.eyeL2:hover {
+    border-color: rgb(0, 169, 244);
+    background-color: rgb(0, 169, 244);
+    box-shadow: 0 0 5px rgba(0, 169, 244, 0.7), 
+    0 0 10px rgba(0, 169, 244, 0.5), 
+    0 0 50px rgba(0, 169, 244, 0.3); 
+}
+.eyeL2:hover .ball1{
+    background-color: black;
+}
+.eyeR2:hover {
+    border-color: rgb(0, 169, 244);
+    background-color: rgb(0, 169, 244);
+    box-shadow: 0 0 5px rgba(0, 169, 244, 0.7), 
+    0 0 10px rgba(0, 169, 244, 0.5), 
+    0 0 50px rgba(0, 169, 244, 0.3); 
+}
+
+.eyeR2:hover .ball2{
+    background-color: black;
+}

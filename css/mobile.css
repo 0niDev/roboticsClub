@@ -1,0 +1,27 @@
+@media screen and (max-width: 900px) {
+    .pc {
+       display: none;
+    }
+    * {
+        cursor: auto;
+    }
+    .mobile {
+        display: block;
+        background-color: white;
+        width: 100lvw;
+        height: 100lvh;
+        padding: 0;
+        overflow: hidden;
+        position: fixed;
+        margin: 0;
+    }
+
+}
+@media screen and (min-width: 900px) {
+    .pc {
+    display: block;
+     }
+     .mobile {
+        display: none
+     }
+}

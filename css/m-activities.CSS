@@ -1,0 +1,77 @@
+@media screen and (max-width: 900px) {
+    .m-activities {
+        position: absolute;
+        background-color: white;
+        z-index: 40;
+        width: 100vw;
+        height: 100vh;
+    }
+    .m-activities .m-activitiesMainHeading {
+        display: block;
+        border: 3px solid black;
+        padding: 4%;
+        border-radius: 5px;
+        font-size: clamp(0px, 5vw, 60px);
+        font-weight: 900;
+        width: 50vw;
+        position: relative;
+        top: 7%;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+    }
+    .acntiviteisWrapper {
+        height: 60vh;
+        position: absolute;
+        top: 45%;
+        transform: translate(0, -50%);
+        padding-top: 1%;
+    }
+    .m-events, .m-projects {
+        margin-top: 5%;
+        border-radius: 5px;
+        border: 3px solid black;
+        width: 80%;
+        height: 40%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .m-svg {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .m-svg svg, .m-svg svg path {
+        width: 40%;
+        fill: rgb(0, 169, 244);
+    }
+    .activiteisText {
+        /* background-color: yellow; */
+        display: inline-block;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        font-weight: 900;
+        padding: 4%;
+        font-size: clamp(0px, 3.2vw, 30px);
+    }
+    .m-activitiesHeading {
+        font-size: clamp(0px, 4.5vw, 70px);
+        margin-bottom: 5%;
+        text-decoration: underline;
+        text-decoration-color: rgb(0, 169, 244);
+        text-align: center;
+        padding: 2%;
+    }
+
+}
