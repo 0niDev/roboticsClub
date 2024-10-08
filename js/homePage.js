@@ -55,3 +55,8 @@ function changeColor() {
 
   updateColor();
 }
+registerButtonPc = document.querySelector(".registerButtonPc");
+registerButtonPc.addEventListener("click", onRegisterButtonPcClickListener);
+function onRegisterButtonPcClickListener() {
+  window.open("html/registerNow.html", "_blank");
+}
