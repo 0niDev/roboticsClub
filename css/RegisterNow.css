@@ -4,10 +4,12 @@
     box-sizing: border-box;
     font-family: monospace;
 }
+
 body {
     height: 100vh;
     overflow: hidden;
 }
+
 h1 {
     font-size: 2em;
     text-align: center;
@@ -21,11 +23,13 @@ h1 {
     left: 50%;
     transform: translateX(-50%);
 }
+
 .contact {
     position: relative;
-    top:15%;
+    top: 15%;
     height: 70%;
 }
+
 h2 {
     position: relative;
     top: 0%;
@@ -33,6 +37,7 @@ h2 {
     font-size: clamp(1.5em, 2vw, 2em);
     text-decoration: underline;
 }
+
 .links {
     position: relative;
     top: 20%;
@@ -42,6 +47,8 @@ h2 {
     justify-content: space-around;
     align-items: start;
 }
+
+/* Links styling */
 .links a {
     display: inline-block;
     width: 15vw;
@@ -53,16 +60,20 @@ h2 {
     justify-content: center;
     align-items: center;
 }
-.links a svg{
+
+.links a svg {
     width: 40%;
     height: auto;
 }
+
 .row {
     width: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
+/* Hover effects */
 .links a:nth-child(1),
 .links a:nth-child(1) svg,
 .links a:nth-child(2),
@@ -74,28 +85,48 @@ h2 {
     transition: all 0.3s ease;
 }
 
-
 .links a:nth-child(1):hover {
     border-color: red;
 }
-.links a:nth-child(1):hover svg{
+
+.links a:nth-child(1):hover svg {
     fill: red;
 }
+
 .links a:nth-child(2):hover {
     border-color: #25d366;
 }
-.links a:nth-child(2):hover svg path{
+
+.links a:nth-child(2):hover svg path {
     fill: #25d366;
 }
+
 .links a:nth-child(3):hover {
     border-color: #e1306c;
 }
-.links a:nth-child(3):hover svg path{
+
+.links a:nth-child(3):hover svg path {
     fill: #e1306c;
 }
+
 .links a:nth-child(4):hover {
     border-color: #1d63a8;
 }
-.links a:nth-child(4):hover svg path{
+
+.links a:nth-child(4):hover svg path {
     fill: #1d63a8;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .links {
+        flex-direction: column; /* Change flex direction to column */
+        align-items: center; /* Center items */
+        top: 10%;
+    }
+    
+    .links a {
+        width: 40vw; /* Adjust link width for better fit on mobile */
+        height: 40vw; /* Auto height for better aspect ratio */
+    }
 }

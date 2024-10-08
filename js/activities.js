@@ -47,26 +47,12 @@ function randomDirection() {
   });
 }
 
-// Initial random positions
 changeText();
 randomDirection();
-
-// Update positions every 4 to 5 seconds without teleporting
-// setInterval(() => {
-//   images.forEach((img) => {
-//     const currentLeft = parseFloat(getComputedStyle(img).left);
-//     const step = Math.random() > 0.5 ? 10 : -10; // Move left or right by 10px
-//     const newLeft = currentLeft + step; // Smaller step
-//     img.style.left = `${Math.min(
-//       Math.max(newLeft, 0),
-//       window.innerWidth - 100
-//     )}px`; // Keep within bounds
-//   });
-// }, 4000 + Math.random() * 1000);
 
 const divein = document.querySelectorAll(".DIVEIN");
 divein.forEach((divein) => {
   divein.addEventListener("click", () => {
-    window.location.href = "comingsoon.html";
+    window.open("html/comingsoon.html", "_blank"); // Opens in a new tab
   });
 });

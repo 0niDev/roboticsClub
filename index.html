@@ -30,6 +30,7 @@
         <script defer src="js/m-nav.js"></script>
         <script defer src="js/m-about.js"></script>
         <script defer src="js/m-navRobot.js"></script>
+        <script defer src="js/m-activities.js"></script>
     </head>
     <body>
         <div class="pc">
@@ -163,6 +164,7 @@
                             class="robotHomePage">
                         <span class="pcHomeRobotMessage"><p></p></span></div>
                     <div class="registerButtonPc">Register Now</div>
+
                 </div>
             </div>
             <div class="about-page">
@@ -252,12 +254,14 @@
                     <h1>Welcome!</h1><span>|</span>
                 </div>
                 <p>We're excited to share our incredible club with you!</p>
-                <div class="getStarted">Register Now!</div>
+                <div class="getStarted" onclick="openRegisterPage()">Register
+                    Now!</div>
+
             </div>
             <div class="m-activities">
                 <span class="m-activitiesMainHeading">Activities</span>
                 <div class="acntiviteisWrapper">
-                    <div class="m-events">
+                    <div class="m-events m-activitesButtons">
                         <div class="m-svg">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 width="800px"
@@ -276,7 +280,7 @@
                             here to see all our exciting upcoming events and
                             activities!</div>
                     </div>
-                    <div class="m-projects">
+                    <div class="m-projects m-activitesButtons">
                         <div class="m-svg">
 
                             <svg xmlns="http://www.w3.org/2000/svg"
