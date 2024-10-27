@@ -56,7 +56,8 @@ function appendDiv() {
 
   setTimeout(moveDown, 100, ob);
 
-  ob.onclick = () => {
+  ob.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // Prevent default behavior
     if (!ob.clicked) {
       ob.clicked = true;
       ob.style.background = "rgba(0,0,0,0.2)";
@@ -64,7 +65,17 @@ function appendDiv() {
       const audio = new Audio("..\\sound.mp3");
       audio.play();
     }
-  };
+  });
+  ob.addEventListener("mousedown", (event) => {
+    event.preventDefault(); // Prevent default behavior
+    if (!ob.clicked) {
+      ob.clicked = true;
+      ob.style.background = "rgba(0,0,0,0.2)";
+      updateScore();
+      const audio = new Audio("..\\sound.mp3");
+      audio.play();
+    }
+  });
 
   adjustGameDifficulty();
 
@@ -72,23 +83,23 @@ function appendDiv() {
 }
 
 function adjustGameDifficulty() {
-  if (score >= 30) {
+  if (score >= 300) {
     step = 5;
     tos = 800;
     console.log("Step: " + step);
-  } else if (score >= 20) {
+  } else if (score >= 200) {
     step = 4;
     tos = 800;
     console.log("Step: " + step);
-  } else if (score >= 15) {
+  } else if (score >= 150) {
     step = 3;
     tos = 1000;
     console.log("Step: " + step);
-  } else if (score >= 10) {
+  } else if (score >= 100) {
     step = 2;
     tos = 1200;
     console.log("Step: " + step);
-  } else if (score >= 5) {
+  } else if (score >= 50) {
     step = 1;
     tos = 1600;
     console.log("Step: " + step);
