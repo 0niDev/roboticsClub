@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game</title>
+        <link rel="stylesheet" href="../css/pianotiles.css">
+    </head>
+    <body>
+        <div class="start">
+            <button>Play</button>
+        </div>
+
+        <div id="game" style="display: none;">
+            <div class="score">
+                <p id="score">Score: 0</p>
+                <p id="health">Health: 3</p> <!-- Health display -->
+            </div>
+
+            <div id="game-container">
+                <div class="line" id="line1"></div>
+                <div class="line" id="line2"></div>
+                <div class="line" id="line3"></div>
+                <div class="line" id="line4"></div>
+            </div>
+            <div class="tiles" id="tiles"></div>
+
+        </div>
+        <div class="result_box">
+            <div class="icon">
+                <i class="fas fa-crown"></i>
+            </div>
+            <div class="complete_text">You've completed The Game!</div>
+            <div class="score_text">You've scored 0 points</div>
+            <div class="buttons">
+                <button class="restart">Replay</button>
+            </div>
+        </div>
+        <script src="../js/pianotiles.js"></script>
+    </body>
+</html>
