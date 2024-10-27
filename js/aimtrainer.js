@@ -9,7 +9,7 @@ const text = result_box.querySelector(".score_text");
 let score = 0;
 let health = 3;
 let targets = [];
-const maxTargets = 5; // Total number of targets
+const maxTargets = 3; // Total number of targets
 let gameInterval;
 
 function viewResult() {
@@ -54,26 +54,16 @@ function spawnTarget() {
 
     // Keep generating random positions until a valid one is found
     while (!positionValid) {
-      left = Math.random() * (game.offsetWidth - 50); // Avoid overflow
-      top = Math.random() * (game.offsetHeight - 50); // Avoid overflow
+      const minLeft = 100; // Minimum horizontal distance from border
+      const maxLeft = game.offsetWidth - 100 - 50; // Target width is 50px
+      const minTop = 100; // Minimum vertical distance from border
+      const maxTop = game.offsetHeight - 100 - 50;
 
-      // Check if the new position overlaps with existing targets
-      positionValid = targets.every((existingTarget) => {
-        const rect1 = {
-          left: left,
-          top: top,
-          right: left + 50, // Assuming target size is 50px
-          bottom: top + 50,
-        };
-        const rect2 = existingTarget.getBoundingClientRect();
+      left = Math.random() * (maxLeft - minLeft) + minLeft;
+      top = Math.random() * (maxTop - minTop) + minTop;
 
-        return !(
-          rect1.left < rect2.right &&
-          rect1.right > rect2.left &&
-          rect1.top < rect2.bottom &&
-          rect1.bottom > rect2.top
-        );
-      });
+      // Check if the new position is within bounds
+      positionValid = true;
     }
 
     target.style.left = left + "px";
@@ -86,35 +76,29 @@ function spawnTarget() {
     let growing = true;
 
     // Set initial growth and shrink rates
-    let growRate = 2;
-    let shrinkRate = 2;
-
-    // Adjust growRate and shrinkRate based on score
+    let growRate = 1;
+    let shrinkRate = 1;
+    let TimesizeInterval = 80;
     if (score >= 30) {
-      growRate = 4;
-      shrinkRate = 4;
+      TimesizeInterval = 70;
     }
     if (score >= 50) {
-      growRate = 6;
-      shrinkRate = 6;
+      TimesizeInterval = 60;
     }
     if (score >= 70) {
-      growRate = 8;
-      shrinkRate = 8;
+      TimesizeInterval = 50;
     }
     if (score >= 90) {
-      growRate = 10;
-      shrinkRate = 10;
+      TimesizeInterval = 40;
     }
     if (score >= 120) {
-      growRate = 12;
-      shrinkRate = 12;
+      TimesizeInterval = 30;
     }
 
     const sizeInterval = setInterval(() => {
       if (growing) {
         size += growRate;
-        if (size >= 100) growing = false;
+        if (size >= 50) growing = false;
       } else {
         size -= shrinkRate;
         if (size <= 0) {
@@ -126,9 +110,9 @@ function spawnTarget() {
       }
       target.style.width = size + "px";
       target.style.height = size + "px";
-    }, 50);
+    }, TimesizeInterval / 2);
 
-    target.onclick = () => {
+    target.addEventListener("touchstart", () => {
       clearInterval(sizeInterval);
       target.remove();
       targets = targets.filter((t) => t !== target); // Remove from active targets
@@ -141,7 +125,21 @@ function spawnTarget() {
       gameInterval = setInterval(spawnTarget, spawnInterval);
       const audio = new Audio("..\\sound.mp3");
       audio.play();
-    };
+    });
+    target.addEventListener("mousedown", () => {
+      clearInterval(sizeInterval);
+      target.remove();
+      targets = targets.filter((t) => t !== target); // Remove from active targets
+      score++;
+      updateScore();
+
+      // Increase spawn speed based on score
+      const spawnInterval = Math.max(300, 1000 - score * 10); // Decrease interval based on score
+      clearInterval(gameInterval);
+      gameInterval = setInterval(spawnTarget, spawnInterval);
+      const audio = new Audio("..\\sound.mp3");
+      audio.play();
+    });
   }
 }
 

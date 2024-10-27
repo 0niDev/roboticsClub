@@ -8,7 +8,6 @@ const text = result_box.querySelector(".score_text");
 
 let a;
 let tos = 2400;
-let bool1 = (bool2 = bool3 = bool4 = true);
 let score = 0;
 let health = 3;
 let step = 0;
@@ -178,5 +177,5 @@ start.querySelector("button").onclick = () => {
   score = 0;
   health = 3;
   updateHealth();
-  speed(200);
+  speed(400);
 };
