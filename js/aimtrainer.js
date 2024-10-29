@@ -78,21 +78,21 @@ function spawnTarget() {
     // Set initial growth and shrink rates
     let growRate = 1;
     let shrinkRate = 1;
-    let TimesizeInterval = 80;
+    let TimesizeInterval = 60;
     if (score >= 30) {
-      TimesizeInterval = 70;
-    }
-    if (score >= 50) {
-      TimesizeInterval = 60;
-    }
-    if (score >= 70) {
       TimesizeInterval = 50;
     }
-    if (score >= 90) {
+    if (score >= 50) {
       TimesizeInterval = 40;
     }
-    if (score >= 120) {
+    if (score >= 70) {
       TimesizeInterval = 30;
+    }
+    if (score >= 90) {
+      TimesizeInterval = 20;
+    }
+    if (score >= 120) {
+      TimesizeInterval = 10;
     }
 
     const sizeInterval = setInterval(() => {

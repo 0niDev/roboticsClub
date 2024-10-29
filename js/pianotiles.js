@@ -82,23 +82,23 @@ function appendDiv() {
 }
 
 function adjustGameDifficulty() {
-  if (score >= 300) {
+  if (score >= 200) {
     step = 5;
     tos = 800;
     console.log("Step: " + step);
-  } else if (score >= 200) {
+  } else if (score >= 120) {
     step = 4;
     tos = 800;
     console.log("Step: " + step);
-  } else if (score >= 150) {
+  } else if (score >= 75) {
     step = 3;
     tos = 1000;
     console.log("Step: " + step);
-  } else if (score >= 100) {
+  } else if (score >= 50) {
     step = 2;
     tos = 1200;
     console.log("Step: " + step);
-  } else if (score >= 50) {
+  } else if (score >= 25) {
     step = 1;
     tos = 1600;
     console.log("Step: " + step);

@@ -114,22 +114,22 @@
   
   .move{
     transform: translateY(145lvh);
-    transition: transform linear 1.5s;
-  }
-  .speedX1{
-    transition: transform linear 1.5s;
-  }
-  .speedX2{
-    transition: transform linear 1.3s;
-  }
-  .speedX3{
     transition: transform linear 1s;
   }
-  .speedX4{
+  .speedX1{
+    transition: transform linear 1s;
+  }
+  .speedX2{
     transition: transform linear 0.8s;
   }
-  .speedX5{
+  .speedX3{
+    transition: transform linear 0.7s;
+  }
+  .speedX4{
     transition: transform linear 0.6s;
+  }
+  .speedX5{
+    transition: transform linear 0.5s;
   }
   .result_box{
       background: #fff;
